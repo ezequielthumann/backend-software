@@ -1,0 +1,66 @@
+@login =http://localhost:3000/user/login
+@singup =http://localhost:3000/user/usersp
+ 
+@materias =http://localhost:3000/user/obtenerproductos
+
+@addmaterias = http://localhost:3000/user/addMateria
+
+@cursarmateria =http://localhost:3000/user/cursar
+
+@materiabydni = http://localhost:3000/user/getMateriaById/:dni
+
+
+
+
+POST {{login}} 
+Content-Type: application/json
+
+{
+    "dni" : "241",
+    "password" : "421"
+}
+
+
+
+
+
+###//separa peticiones
+POST {{singup}}
+Content-Type: application/json
+
+{
+    "dni" : "241",
+    "nombre" : "prueba",
+    "password" : "421"
+}
+
+
+###
+GET {{materias}}
+auth : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkbmkiOiIyMzAiLCJub21icmUiOiJwcnVlYmEiLCJpYXQiOjE3MTcxOTY5MjQsImV4cCI6MTcxNzE5NzUyNH0.Y-nWbUuz5GUg_y5_eFQechl6sQ--H8aCkkU9PrEbv_o
+###
+POST {{addmaterias}}
+Content-Type: application/json
+
+{
+    "nombre_materia" : "holamundo"
+}
+
+
+###
+POST {{cursarmateria}}
+Content-Type: application/json
+
+{
+    "dni" : "241",
+    "id_m" : "1"
+}
+
+
+###
+GET {{materiabydni}}
+Content-Type: application/json
+
+{
+
+}
